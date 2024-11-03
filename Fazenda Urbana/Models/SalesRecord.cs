@@ -18,7 +18,7 @@ namespace FazendaUrbana.Models
 
         }
 
-        public SalesRecord(int id, DateTime date, double amount, SaleStatus status)
+        public SalesRecord(int id, DateTime date, double amount, SaleStatus status, Seller s2)
         {
             Id = id;
             Date = date;
