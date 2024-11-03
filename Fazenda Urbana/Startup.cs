@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using FazendaUrbana.Models;
 using FazendaUrbana.Data;
+using FazendaUrbana.Services;
 
 namespace Fazenda_Urbana
 {
@@ -42,6 +43,7 @@ namespace Fazenda_Urbana
                         builder.MigrationsAssembly("FazendaUrbana")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

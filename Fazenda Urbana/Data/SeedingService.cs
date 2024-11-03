@@ -31,9 +31,9 @@ namespace FazendaUrbana.Data
             Department d4 = new Department(4, "Gourmet Products");
 
             Seller s1 = new Seller(1, "Fernando", "fernando@gmail.com", new DateTime(2005, 03, 18), 5000.0, d1);
-            Seller s2 = new Seller(2, "Brenno", "brenno@gmail.com", new DateTime(2001, 11, 20), 5000.0, d2);
+            Seller s2 = new Seller(2, "Brenno", "brenno@gmail.com", new DateTime(2001, 11, 20), 5500.0, d2);
             Seller s3 = new Seller(3, "Ewerton", "ewerton@gmail.com", new DateTime(2002, 05, 01), 5000.0, d3);
-            Seller s4 = new Seller(4, "Daniel", "daniel@gmail.com", new DateTime(2002, 01, 02), 5000.0, d4);
+            Seller s4 = new Seller(4, "Daniel", "daniel@gmail.com", new DateTime(2002, 01, 02), 6200.0, d4);
 
             SalesRecord r1 = new SalesRecord(1, new DateTime(2024, 08, 19), 1100.0, SaleStatus.Billed, s2);
             SalesRecord r2 = new SalesRecord(2, new DateTime(2024, 08, 20), 1500.0, SaleStatus.Billed, s1);
