@@ -1,6 +1,6 @@
 using System;
 
-namespace Fazenda_Urbana.Models
+namespace Fazenda_Urbana.Models.ViewModels
 {
     public class ErrorViewModel
     {

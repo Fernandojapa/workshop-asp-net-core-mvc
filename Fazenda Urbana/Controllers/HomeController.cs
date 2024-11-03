@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Fazenda_Urbana.Models;
+using Fazenda_Urbana.Models.ViewModels;
 
 namespace Fazenda_Urbana.Controllers
 {
