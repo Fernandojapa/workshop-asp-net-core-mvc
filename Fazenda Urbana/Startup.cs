@@ -37,7 +37,8 @@ namespace Fazenda_Urbana
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<FazendaUrbanaContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("FazendaUrbanaContext")));
+                    options.UseMySql(Configuration.GetConnectionString("FazendaUrbanaContext"), builder =>
+                        builder.MigrationsAssembly("FazendaUrbana")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
