@@ -35,17 +35,17 @@ namespace FazendaUrbana.Data
             Seller s3 = new Seller(3, "Ewerton", "ewerton@gmail.com", new DateTime(2002, 05, 01), 5000.0, d3);
             Seller s4 = new Seller(4, "Daniel", "daniel@gmail.com", new DateTime(2002, 01, 02), 6200.0, d4);
 
-            SalesRecord r1 = new SalesRecord(1, new DateTime(2024, 08, 19), 1100.0, SaleStatus.Billed, s2);
+            SalesRecord r1 = new SalesRecord(1, new DateTime(2024, 08, 19), 1100.0, SaleStatus.Canceled, s2);
             SalesRecord r2 = new SalesRecord(2, new DateTime(2024, 08, 20), 1500.0, SaleStatus.Billed, s1);
-            SalesRecord r3 = new SalesRecord(3, new DateTime(2024, 09, 02), 2000.0, SaleStatus.Billed, s3);
-            SalesRecord r4 = new SalesRecord(4, new DateTime(2024, 09, 07), 8000.0, SaleStatus.Billed, s1);
+            SalesRecord r3 = new SalesRecord(3, new DateTime(2024, 09, 02), 2000.0, SaleStatus.Canceled, s3);
+            SalesRecord r4 = new SalesRecord(4, new DateTime(2024, 09, 07), 8000.0, SaleStatus.Pending, s1);
             SalesRecord r5 = new SalesRecord(5, new DateTime(2024, 09, 11), 2000.0, SaleStatus.Billed, s4);
-            SalesRecord r6 = new SalesRecord(6, new DateTime(2024, 09, 15), 4000.0, SaleStatus.Billed, s4);
+            SalesRecord r6 = new SalesRecord(6, new DateTime(2024, 09, 15), 4000.0, SaleStatus.Pending, s4);
             SalesRecord r7 = new SalesRecord(7, new DateTime(2024, 09, 16), 1500.0, SaleStatus.Billed, s3);
-            SalesRecord r8 = new SalesRecord(8, new DateTime(2024, 09, 19), 1800.0, SaleStatus.Billed, s3);
+            SalesRecord r8 = new SalesRecord(8, new DateTime(2024, 09, 19), 1800.0, SaleStatus.Pending, s3);
             SalesRecord r9 = new SalesRecord(9, new DateTime(2024, 09, 21), 1500.0, SaleStatus.Billed, s2);
-            SalesRecord r10 = new SalesRecord(10, new DateTime(2024, 09, 27), 8000.0, SaleStatus.Billed, s1);
-            SalesRecord r11 = new SalesRecord(11, new DateTime(2024, 10, 05), 2000.0, SaleStatus.Billed, s1);
+            SalesRecord r10 = new SalesRecord(10, new DateTime(2024, 09, 27), 8000.0, SaleStatus.Canceled, s1);
+            SalesRecord r11 = new SalesRecord(11, new DateTime(2024, 10, 05), 2000.0, SaleStatus.Pending, s1);
 
             _context.Department.AddRange(d1, d2, d3, d4);
 
