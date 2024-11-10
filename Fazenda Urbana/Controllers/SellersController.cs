@@ -7,6 +7,8 @@ using FazendaUrbana.Services;
 using FazendaUrbana.Models;
 using FazendaUrbana.Models.ViewModels;
 using FazendaUrbana.Services.Exceptions;
+using Fazenda_Urbana.Models.ViewModels;
+using System.Diagnostics;
 
 namespace FazendaUrbana.Controllers
 {
@@ -45,7 +47,7 @@ namespace FazendaUrbana.Controllers
         {
             if(id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
 
             var obj = _sellerService.FindById(id.Value);
@@ -68,13 +70,13 @@ namespace FazendaUrbana.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
 
             var obj = _sellerService.FindById(id.Value);
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
 
             return View(obj);
@@ -84,13 +86,13 @@ namespace FazendaUrbana.Controllers
         {
             if(id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
 
             var obj = _sellerService.FindById(id.Value);
             if(obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
 
             List<Department> departments = _departmentService.FindAll();
@@ -104,21 +106,27 @@ namespace FazendaUrbana.Controllers
         {
             if (id != seller.Id)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
             try
             {
                 _sellerService.Update(seller);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundException)
+            catch (ApplicationException e)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = e.Message });
             }
-            catch (DbConcurrencyException)
+        }
+            public IActionResult Error(string message)
             {
-                return BadRequest();
+                var viewModel = new ErrorViewModel
+                {
+                    Message = message,
+                    RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+                };
+                return View(viewModel);
             }
         }
     }
-}
+
